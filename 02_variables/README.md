@@ -1,19 +1,17 @@
-# ⚡ Arduino Variable Output & Serial Stream Visualizer
+# ⚡ Arduino Integer Variable Printing & Serial Output
 
-A practical demonstration of variable handling and serial streaming in C++ for Arduino microcontrollers, focusing on numerical vs. text-based data types.
-
----
-
-## 📸 Output Screenshots
-
-| 01. Integer Data Type Printing | 02. String & Text Data Type Printing |
-| :--- | :--- |
-| ![Integer Data Type Output](./screenshots/output_integer.png) | ![String Data Type Output](./screenshots/output_string.png) |
-| *Demonstrates integer variable assignment and numeric value streaming to the Serial Monitor.* | *Demonstrates C-style string buffers and String object rendering over the Serial interface.* |
+A targeted module demonstrating integer variable initialization, memory storage, and serial output streaming using the Arduino Hardware Serial interface.
 
 ---
 
-## 🧠 Key Takeaways
+## 📌 Module Breakdown
 
-* **Numerical Output:** Direct printing of integer types (`int`, `long`, `unsigned`) handles raw binary-to-ASCII conversion behind the scenes.
-* **Text Streams:** Differentiates between heap-allocated `String` objects and null-terminated character arrays (`char[]`) for memory-conscious firmware development.
+* **Integer Declaration & Assignment:** Covers basic initialization of signed and unsigned integer variables (`int`, `unsigned int`, `long`, `int8_t` / `uint8_t`).
+* **Serial Streaming:** Demonstrates direct numeric output via `Serial.print()` and `Serial.println()`, observing how the Arduino core handles automatic binary-to-ASCII conversions for hardware serial transmission.
+
+---
+
+## 🧠 Technical Takeaways
+
+* **Implicit ASCII Conversion:** Passing integer types directly to `Serial.print()` invokes overloaded C++ methods that format raw integer values into printable ASCII character streams.
+* **Type Sizing & Memory:** Highlights integer bit-width selection to ensure integer variables do not overflow while minimizing SRAM footprint on memory-constrained microcontrollers.
